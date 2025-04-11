@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:31:38 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/08 12:07:44 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:21:18 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <unistd.h>
 
 //function prototypes
 
@@ -62,7 +63,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int	ft_atoi(const char *nptr);
 
-//ft_calloc();
+void	*ft_calloc(size_t nmemb, size_t size);
 
 char	*ft_strdup(const char *s);
 

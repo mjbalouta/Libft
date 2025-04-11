@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 14:43:53 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/09 17:27:03 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/11 13:47:39 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ end with a NULL pointer.
  */
 
 #include "libft.h"
+
+static char	**ft_free_array(char **s)
+{
+	int i;
+	
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	return (0);
+}
 
 static int	ft_count_words(char const *s, char c)
 {
@@ -36,69 +50,77 @@ static int	ft_count_words(char const *s, char c)
 		word = 0;
 		if (s[i] == c)
 			word = 1;
-		i++;		
+		i++;
 	}
 	return (count);
-}	
-char	*ft_fill_array(char const *s)
-{
-	int		i;
-	char	*ptr;
-	int		size;
+}
 
-	i = 0;
-	size = ft_strlen(s);
-	ptr = (char *)malloc(sizeof(char) * (size + 1));
-	if (ptr == NULL)
-		return (NULL);
-	while (s[i])
+static int	ft_count_char(int i, const char *s, char c)
+{
+	int	count;
+
+	count = 0;
+	while (s[i] != c && s[i])
 	{
-			ptr[i] = s[i];
-			i++;
+		count++;
+		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (count);
+}
+
+static char	**ft_fill_array(char **array, int nr_words, const char *s, char c)
+{
+	int	j;
+	int	i;
+	int	start;
+	int	count;
+
+	j = 0;
+	i = 0;
+	while (j < nr_words)
+	{
+		count = 0;
+		if (s[i] != c)
+		{
+			start = i;
+			count = ft_count_char(i, s, c);
+			array[j] = (char *)malloc(sizeof(char) * (count + 1));
+			if (!array[j])
+			{
+				ft_free_array(array);
+				return (NULL);
+			}
+			ft_strlcpy(array[j++], s + start, count + 1);
+		}
+		else
+			i++;
+		i = i + count;
+	}
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
-	int		count_words;
-	int		i;
-	int		isword;
-	int		j;
+	int		nr_words;
 
-	i = 0;
-	count_words = ft_count_words(s, c);
-	array = (char **)malloc(sizeof(char) * (count_words + 1));
-	isword = 1;
+	nr_words = ft_count_words(s, c);
+	array = (char **)ft_calloc((nr_words + 1), sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	while (i < count_words)
-	{
-		if (isword == 1 && s[i] != c)
-		{
-			j = 0;
-			while(s[i++] != c)
-				array[j] = ft_fill_array(s); //aqui esta a copiar a string toda e nao palavra a palavra
-		}
-		isword = 0;
-		if (s[i] == c)
-			isword = 1;
-		i++;		
-	}
+	array[nr_words] = NULL;
+	array = ft_fill_array(array, nr_words, s, c);
 	return (array);
 }
 
 int	main(void)
 {
-	char	s[] = " a+maria";
+	char	s[] = " a+maria++joao++joao";
 	char	c = '+';
 	int		i = 0;
 	char **result = ft_split(s, c);
 	while (result[i])
 		printf("%s\n", result[i++]);
-	while (result[i])
-		free(result[i++]);
+	ft_free_array(result);
 	return (0);
 }

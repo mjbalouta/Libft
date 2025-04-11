@@ -1,0 +1,93 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 13:49:56 by mjoao-fr          #+#    #+#             */
+/*   Updated: 2025/04/11 17:16:07 by mjoao-fr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static char	*ft_putnbr(long num, char *str, int nr_digits, int is_negative)
+{
+	int	last;
+
+	last = nr_digits + 1;
+	if (is_negative != 1)
+		nr_digits = nr_digits - 1;
+	while (num > 0 && nr_digits >= 0)
+	{
+		str[nr_digits] = (num % 10) + '0';
+		num = num / 10;
+		nr_digits--;
+	}
+	if (is_negative == 1)
+		str[nr_digits] = '-';
+	str[last] = '\0';
+	return (str);
+}
+
+static int	ft_count_digits(long num)
+{
+	int	nr_digits;
+
+	nr_digits = 0;
+	while (num > 0)
+	{
+		num = num / 10;
+		nr_digits++;
+	}
+	return (nr_digits);
+}
+
+char	*ft_memory_alloc(int is_negative, int nr_digits)
+{
+	char	*str;
+
+	if (is_negative == 1)
+		str = (char *)malloc(sizeof(char) * nr_digits + 2);
+	else
+		str = (char *)malloc(sizeof(char) * nr_digits + 1);
+	if (!str)
+	{
+		free(str);
+		return (NULL);
+	}
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	int		nr_digits;
+	char	*str;
+	int		is_negative;
+	long	num;
+
+	num = n;
+	is_negative = 0;
+	if (num == 0)
+		return ("0");
+	if (num < 0)
+	{
+		is_negative = 1;
+		num = num * (-1);
+	}
+	nr_digits = ft_count_digits(num);
+	str = ft_memory_alloc(is_negative, nr_digits);
+	str = ft_putnbr(num, str, nr_digits, is_negative);
+	return (str);
+}
+
+/*int	main(void)
+{
+	int n = INT_MIN;
+	char *result = ft_itoa(n);
+	printf("%s\n", result);
+	printf("%d\n", INT_MIN);
+	free(result);
+	return (0);
+}*/

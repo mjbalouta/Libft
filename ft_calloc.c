@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:29:18 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/08 12:28:23 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:29:25 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-	size_t	len;
 
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
