@@ -1,45 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 12:30:00 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:56:16 by mjoao-fr         ###   ########.fr       */
+/*   Created: 2025/04/14 14:20:49 by mjoao-fr          #+#    #+#             */
+/*   Updated: 2025/04/14 14:56:18 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief  allocates memory (using malloc(3)) and returns a
-substring from the string ’s’.
-The substring starts at index ’start’ and has a
-maximum length of ’len’.
- */
-
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	size;
-	size_t	i;
+	int		i;
 	char	*ptr;
+	int		size;
 
 	size = ft_strlen(s);
-	i = 0;
-	ptr = (char *)malloc((sizeof(char)) * (len + 1));
-	if (ptr == NULL)
+	ptr = (char *)malloc(sizeof(char) * (size + 1));
+	if (!ptr)
 		return (NULL);
-	while (i < len)
-		ptr[i++] = s[start++];
+	i = 0;
+	while (s[i])
+	{
+		ptr[i] = f(i, s[i]);
+		i++;
+	}
 	ptr[i] = '\0';
 	return (ptr);
 }
 
-/*int main(void)
+/*char    f(unsigned int a, char c)
 {
-    char const s[]= "maria";
-    char *result = ft_substr(s, 2, 10);
+    if (a % 2 == 0 && c >= 'a' && c <= 'z')
+    {
+        c = c - 32;
+    }
+    return (c);
+}
+
+int main(void)
+{
+    char s[] = "maria";
+    char *result = ft_strmapi(s, f);
     printf("%s\n", result);
-    return(0);
+    free(result);
 }*/

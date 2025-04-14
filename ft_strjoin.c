@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:04:44 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/09 11:23:59 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:56:19 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,29 @@ and ’s2’.
 
 #include "libft.h"
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    int     size;
-    char    *ptr;
-    int     i;
-    int     j;
+	int		size;
+	char	*ptr;
+	int		i;
+	int		j;
 
-    size = ft_strlen(s1) + ft_strlen(s2);
-    ptr = (char *)malloc(sizeof(char) * (size + 1));
-    i = 0;
-    j = 0;
-    while (s1[i])
-    {
-        ptr[i] = s1[i];
-        i++;
-    }
-    while (s2[j])
-    {
-        ptr[i] = s2[j++];
-        i++;
-    }
-    ptr[i] = '\0';
-    return (ptr);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	ptr = (char *)malloc(sizeof(char) * (size + 1));
+	i = 0;
+	j = 0;
+	while (s1[i])
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		ptr[i] = s2[j++];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
 
 /*int main(void)

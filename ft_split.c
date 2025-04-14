@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 14:43:53 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/11 13:47:39 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:56:24 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ end with a NULL pointer.
 
 static char	**ft_free_array(char **s)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (s[i])
 	{
@@ -113,7 +113,7 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	s[] = " a+maria++joao++joao";
 	char	c = '+';
@@ -123,4 +123,4 @@ int	main(void)
 		printf("%s\n", result[i++]);
 	ft_free_array(result);
 	return (0);
-}
+}*/

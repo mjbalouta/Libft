@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:49:56 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/11 17:16:07 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:20:35 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ char	*ft_memory_alloc(int is_negative, int nr_digits)
 		str = (char *)malloc(sizeof(char) * nr_digits + 1);
 	if (!str)
 	{
-		free(str);
 		return (NULL);
 	}
 	return (str);
