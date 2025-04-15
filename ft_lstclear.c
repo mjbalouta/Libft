@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 14:37:21 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 11:17:02 by mjoao-fr         ###   ########.fr       */
+/*   Created: 2025/04/15 14:09:35 by mjoao-fr          #+#    #+#             */
+/*   Updated: 2025/04/15 16:06:06 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*ptr;
+	t_list	*temp;
 
-	ptr = malloc(sizeof(t_list));
-	if (!ptr)
-		return (NULL);
-	
-	ptr->content = content;
-	ptr->next = NULL;
-
-	return (ptr);
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = temp;
+	}
 }
 
 /*int	main(void)
 {
-	int	*content;
-	int	a = 42;
-	content = &a;
-	t_list	*result = ft_lstnew(content); 
-	printf("%d\n", *(int *)result->content); //dereferencing *result and cast it to (int *)
-	free(result);
+	t_list	*lst;
+	t_list	*ptr;
+	int *a = malloc(sizeof(int));
+	int *b = malloc(sizeof(int));
+	
+	*a = 1;
+	*b = 2;
+	lst = ft_lstnew(a);
+	ptr = ft_lstnew(b);
+	lst->next = ptr;
+	ptr->next = NULL;
+	ft_lstclear(&lst, free);
+	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:30:00 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:56:16 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:39:16 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ maximum length of ’len’.
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	size;
 	size_t	i;
 	char	*ptr;
 
-	size = ft_strlen(s);
 	i = 0;
 	ptr = (char *)malloc((sizeof(char)) * (len + 1));
 	if (ptr == NULL)

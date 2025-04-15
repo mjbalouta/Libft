@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 14:37:21 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 11:17:02 by mjoao-fr         ###   ########.fr       */
+/*   Created: 2025/04/15 15:49:50 by mjoao-fr          #+#    #+#             */
+/*   Updated: 2025/04/15 16:45:08 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*ptr;
-
-	ptr = malloc(sizeof(t_list));
-	if (!ptr)
-		return (NULL);
-	
-	ptr->content = content;
-	ptr->next = NULL;
-
-	return (ptr);
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst -> next;
+	}
 }
 
-/*int	main(void)
+void	ft_plusone(t_list *lst)
 {
-	int	*content;
-	int	a = 42;
-	content = &a;
-	t_list	*result = ft_lstnew(content); 
-	printf("%d\n", *(int *)result->content); //dereferencing *result and cast it to (int *)
-	free(result);
-}*/
+	
+}
+
+// int	main(void)
+// {
+	
+// }

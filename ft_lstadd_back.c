@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 14:37:21 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 11:17:02 by mjoao-fr         ###   ########.fr       */
+/*   Created: 2025/04/15 11:38:49 by mjoao-fr          #+#    #+#             */
+/*   Updated: 2025/04/15 11:52:22 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ptr;
-
-	ptr = malloc(sizeof(t_list));
-	if (!ptr)
-		return (NULL);
 	
-	ptr->content = content;
-	ptr->next = NULL;
-
-	return (ptr);
+	ptr = *lst;
+	while (ptr->next)
+	{
+		ptr = ptr->next;
+	}
+	ptr->next = new;
 }
 
 /*int	main(void)
 {
-	int	*content;
-	int	a = 42;
-	content = &a;
-	t_list	*result = ft_lstnew(content); 
-	printf("%d\n", *(int *)result->content); //dereferencing *result and cast it to (int *)
-	free(result);
+	t_list *lst;
+	t_list *ptr;
+	t_list	*new;
+
+	lst = ft_lstnew((int *)(intptr_t)1);
+	ptr = ft_lstnew((int *)(intptr_t)2);
+	new = ft_lstnew((int *)(intptr_t)3);
+	lst->next = ptr;
+	ft_lstadd_back(&lst, new);
+	while (lst)
+	{
+		printf("%d\n", (int)(intptr_t)lst->content);
+		lst = lst->next;
+	}
+	free(lst);
+	free(ptr);
+	free(new);
+	return(0);
 }*/

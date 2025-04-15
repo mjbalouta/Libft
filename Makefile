@@ -11,6 +11,8 @@ OBJS = main.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o f
 #name of the executable
 NAME = libft.a
 
+all: $(NAME)
+
 #creates an executable program
 program: main.o $(NAME)
 	@$(CC) $(CFLAGS) -o program main.o $(NAME) #links main.o and libft.a and creates an executable file with the name program

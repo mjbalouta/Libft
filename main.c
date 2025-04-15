@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:31:05 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/10 19:17:51 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:43:37 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,7 @@ int	main(void)
 	const char s[] = "maria";
 	const char s1[] = "";
 	const char s2[] = "mar1a";
-	string = ft_strchr(s, 'a');
+	string = ft_strchr(s, ' ');
 	printf("Tested 'maria' and 'a'\tExpected: aria\tGot: %s\n", string);
 	string = ft_strchr(s2, '1');
 	printf("Tested 'mar1a' and '1'\tExpected: 1a\tGot: %s\n", string);

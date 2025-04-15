@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:04:44 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:56:19 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:50:59 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
     char s2[] = " joao";
     char    *result = ft_strjoin(s1, s2);
     printf("%s\n", result);
+	free(result);
 }*/
