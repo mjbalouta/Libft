@@ -23,21 +23,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	size;
 	char	*src;
-	
+    char    *ptr;
+
 	if (!s)
 		return (NULL);
 	size = ft_strlen(s);
 	if ((size_t)start >= size)
-		return ('\0');
+		return (ft_strdup(""));
 	src = (char *)s + start;
-	if (len > size)
-		
-		
-		
-
-	
-	
+	size = ft_strlen(src);
+    while (size > len)
+        size--;
+    ptr = (char *)malloc(sizeof(char) * (size + 1));
+    if (!ptr)
+        return (NULL);
+    ft_strlcpy(ptr, src, size + 1);
+    return (ptr);
 }
+
 
 // int main(void)
 // {
@@ -46,24 +49,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 //     printf("%s\n", result);
 //     return(0);
 // }
-
-
-
-
-// size_t	i;
-	// char	*ptr;
-	// size_t	size;
-	
-	// if (!s)
-	// 	return (NULL);
-	// size = ft_strlen(s);
-	// i = 0;
-	// if ((size_t)start >= size)
-	// 	return (ft_strdup(""));
-	// ptr = (char *)malloc((sizeof(char)) * (len + 1));
-	// if (ptr == NULL)
-	// 	return (NULL);
-	// while (i < len)
-	// 	ptr[i++] = s[start++];
-	// ptr[i] = '\0';
-	// return (ptr);
