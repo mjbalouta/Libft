@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:30:00 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 16:39:16 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:38:12 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,49 @@ maximum length of ’len’.
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*ptr;
-
-	i = 0;
-	ptr = (char *)malloc((sizeof(char)) * (len + 1));
-	if (ptr == NULL)
+	size_t	size;
+	char	*src;
+	
+	if (!s)
 		return (NULL);
-	while (i < len)
-		ptr[i++] = s[start++];
-	ptr[i] = '\0';
-	return (ptr);
+	size = ft_strlen(s);
+	if ((size_t)start >= size)
+		return ('\0');
+	src = (char *)s + start;
+	if (len > size)
+		
+		
+		
+
+	
+	
 }
 
-/*int main(void)
-{
-    char const s[]= "maria";
-    char *result = ft_substr(s, 2, 10);
-    printf("%s\n", result);
-    return(0);
-}*/
+// int main(void)
+// {
+//     char const s[]= "maria";
+//     char *result = ft_substr(s, 2, 10);
+//     printf("%s\n", result);
+//     return(0);
+// }
+
+
+
+
+// size_t	i;
+	// char	*ptr;
+	// size_t	size;
+	
+	// if (!s)
+	// 	return (NULL);
+	// size = ft_strlen(s);
+	// i = 0;
+	// if ((size_t)start >= size)
+	// 	return (ft_strdup(""));
+	// ptr = (char *)malloc((sizeof(char)) * (len + 1));
+	// if (ptr == NULL)
+	// 	return (NULL);
+	// while (i < len)
+	// 	ptr[i++] = s[start++];
+	// ptr[i] = '\0';
+	// return (ptr);

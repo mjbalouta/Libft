@@ -1,21 +1,27 @@
-
 #defining that when the variable CC is used, the compiler will be cc
 CC = cc
 
 #declaring that the variable CFLAGS will use the flags below everytime it's called in the program
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
-#listing the objects used by the program
-OBJS = main.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_strlen.o ft_memset.o  ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o 
+#listing the sources used by the program
+SRCS = main.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
+BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c
 
 #name of the executable
 NAME = libft.a
 
+#rule to create objs
+OBJS = $(SRCS:.c=.o)
+
+#rule to create bonus objs
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+ 
 all: $(NAME)
 
-#creates an executable program
-program: main.o $(NAME)
-	@$(CC) $(CFLAGS) -o program main.o $(NAME) #links main.o and libft.a and creates an executable file with the name program
+bonus: $(OBJS) $(BONUS_OBJS)
+	@@echo "Compiling with bonus files..."
+	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 #rule to create the static library libft.a from object files .o
 $(NAME): $(OBJS)
@@ -29,10 +35,13 @@ $(NAME): $(OBJS)
 #clean rule (removes .o files, but not the static library)
 clean:
 	@@echo "Removing objects..."
-	@rm -f $(OBJS) #-f forces the removal of files supressing possible errors
+	@rm -f $(OBJS) $(BONUS_OBJS) #-f forces the removal of files supressing possible errors
 
 fclean: clean #removes objects and library
 	@@echo "Removing library..."
 	@rm -f $(NAME)
 
 re: fclean $(NAME) #recompiles everything
+
+.PHONY: all clean fclean re bonus
+

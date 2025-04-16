@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:49:50 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 16:45:08 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 10:58:12 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-void	ft_plusone(t_list *lst)
+/*void	ft_plusone(t_list *lst)
 {
 	
-}
+}*/
 
 // int	main(void)
 // {

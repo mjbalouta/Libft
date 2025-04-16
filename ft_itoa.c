@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:49:56 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:20:35 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:45:03 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,9 @@ char	*ft_memory_alloc(int is_negative, int nr_digits)
 	char	*str;
 
 	if (is_negative == 1)
-		str = (char *)malloc(sizeof(char) * nr_digits + 2);
+		str = (char *)ft_calloc((nr_digits + 2), sizeof(char));
 	else
-		str = (char *)malloc(sizeof(char) * nr_digits + 1);
-	if (!str)
-	{
-		return (NULL);
-	}
+		str = (char *)ft_calloc((nr_digits + 1), sizeof(char));
 	return (str);
 }
 
@@ -77,16 +73,18 @@ char	*ft_itoa(int n)
 	}
 	nr_digits = ft_count_digits(num);
 	str = ft_memory_alloc(is_negative, nr_digits);
+	if (!str)
+		return (NULL);
 	str = ft_putnbr(num, str, nr_digits, is_negative);
 	return (str);
 }
 
-/*int	main(void)
-{
-	int n = INT_MIN;
-	char *result = ft_itoa(n);
-	printf("%s\n", result);
-	printf("%d\n", INT_MIN);
-	free(result);
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	int num = -9874;
+// 	char *res;
+// 	res = ft_itoa(num);
+// 	printf("%s\n", res);
+// 	free(res);
+// 	return (0);
+// }

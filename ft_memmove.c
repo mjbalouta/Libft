@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:30:10 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/07 16:31:21 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:43:28 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t				i;
-	const unsigned char	*ptr_src;
+	unsigned char	*ptr_src;
 	unsigned char		*ptr_dest;
 
 	i = 0;
-	ptr_src = (const unsigned char *)src;
+	ptr_src = (unsigned char *)src;
 	ptr_dest = (unsigned char *)dest;
+	if (!n || (!ptr_dest && !ptr_src))
+		return (dest);
 	if (ptr_dest > ptr_src)
 	{
 		i = n;

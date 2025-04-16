@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:17:34 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 11:34:26 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:13:35 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-	int		size;
 	t_list	*ptr;
 	
-	size = ft_lstsize(lst);
 	ptr = lst;
 	while (ptr->next)
 	{

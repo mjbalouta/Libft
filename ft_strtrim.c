@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:28:35 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:25:16 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:26:41 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_count_end(s1, set, size);
 	size = size - end - start;
 	ptr = (char *)malloc(sizeof(char) * (size + 1));
+	if (!ptr)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{
