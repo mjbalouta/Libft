@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:28:35 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 11:26:41 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:34:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		size;
 	int		end;
 
-	start = ft_count_start(s1, set);
+	if(!s1[0])
+		return (ft_strdup(""));
+	if (!set[0])
+		return (ft_strdup(s1));
 	size = ft_strlen(s1);
-	end = ft_count_end(s1, set, size);
+	start = ft_count_start(s1, set);
+	end = 0;
+	if (start < size)
+		end = ft_count_end(s1, set, size);
 	size = size - end - start;
 	ptr = (char *)malloc(sizeof(char) * (size + 1));
 	if (!ptr)
@@ -99,8 +105,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*int	main(void)
 {
-	char	s1[] = "!!mar,ia!...!";
-	char	set[] = ",!.";
+	char	s1[] = "   xxx   xxx";
+	char	set[] = " x";
 	char	*result = ft_strtrim(s1, set);
 	printf("%s\n", result);
     free(result);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:17:34 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 11:13:35 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:57:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-	t_list	*ptr;
-	
-	ptr = lst;
-	while (ptr->next)
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 	{
-		ptr = ptr->next;
+		lst = lst->next;
 	}
-	return (ptr);
+	return (lst);
 }
 
 /*int	main(void)

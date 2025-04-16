@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:49:50 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 10:58:12 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 21:45:32 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,44 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-/*void	ft_plusone(t_list *lst)
+/* void	ft_plusone(void *content)
 {
-	
-}*/
+	int *num = (int *)content;
+	(*num)++;
+}
 
-// int	main(void)
-// {
-	
-// }
+int	main(void)
+{
+	int a = 1;
+	int b = 2;
+	int c = 3;
+
+	t_list *n1 = ft_lstnew(&a);
+	t_list *n2 = ft_lstnew(&b);
+	t_list *n3 = ft_lstnew(&c);
+
+	n1->next = n2;
+	n2->next = n3;
+
+	printf("Before:\n");
+	t_list *tmp = n1;
+	while (tmp)
+	{
+		printf("%d\n", *(int *)tmp->content);
+		tmp = tmp->next;
+	}
+
+	ft_lstiter(n1, ft_plusone);
+
+	printf("\nAfter:\n");
+	tmp = n1;
+	while (tmp)
+	{
+		printf("%d\n", *(int *)tmp->content);
+		tmp = tmp->next;
+	}
+	free(n1);
+	free(n2);
+	free(n3);
+	return (0);
+}  */

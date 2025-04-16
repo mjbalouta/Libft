@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:38:49 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 18:03:01 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 21:28:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ptr;
 	
+	if (!lst || !new)
+		return;
+	if (!*lst)
+	{
+		*lst = new;
+		return;	
+	}
 	ptr = *lst;
 	while (ptr->next)
 	{
@@ -29,6 +36,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list *lst;
 	t_list *ptr;
 	t_list	*new;
+	t_list	*temp;
 
 	lst = ft_lstnew((int *)(intptr_t)1);
 	ptr = ft_lstnew((int *)(intptr_t)2);
@@ -40,8 +48,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		printf("%d\n", (int)(intptr_t)lst->content);
 		lst = lst->next;
 	}
-	free(lst);
-	free(ptr);
-	free(new);
-	return(0);
+	//free memory
+	while (lst)
+	{
+		temp = lst->next;
+		free(lst);
+		lst = temp;
+	}
+	return 0;
 }*/

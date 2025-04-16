@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:49:56 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 14:45:03 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:52:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	*ft_itoa(int n)
 	num = n;
 	is_negative = 0;
 	if (num == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	if (num < 0)
 	{
 		is_negative = 1;
