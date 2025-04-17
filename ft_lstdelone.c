@@ -6,9 +6,15 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:53:01 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 15:36:15 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:27:15 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Takes a node as parameter and frees its content
+using the function ’del’. Free the node itself but
+does NOT free the next node.
+ */
 
 #include "libft.h"
 

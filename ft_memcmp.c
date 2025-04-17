@@ -6,9 +6,17 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:30:00 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 12:26:05 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:59:42 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_memcmp.c
+ * @brief returns an integer less than, equal to, or
+ greater than zero if the first n bytes of s1 is found,
+ respectively, to be less than, to match, or be greater
+ than the first n bytes of s2.
+ */
 
 #include "libft.h"
 

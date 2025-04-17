@@ -6,9 +6,18 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:20:49 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:56:18 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:32:27 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strmapi.c
+ * @brief Applies the function f to each character of the
+string s, passing its index as the first argument
+and the character itself as the second. A new
+string is created (using malloc(3)) to store the
+results from the successive applications of f.
+ */
 
 #include "libft.h"
 

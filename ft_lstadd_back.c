@@ -3,25 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:38:49 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 21:28:00 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/17 11:27:52 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Adds the node ’new’ at the end of the list.
+ */
 
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ptr;
-	
+
 	if (!lst || !new)
-		return;
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
-		return;	
+		return ;
 	}
 	ptr = *lst;
 	while (ptr->next)

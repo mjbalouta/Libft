@@ -6,9 +6,14 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:39:33 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 11:32:35 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:28:47 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_lstsize.c
+ * @brief Counts the number of nodes in the list.
+ */
 
 #include "libft.h"
 
@@ -16,7 +21,7 @@ int	ft_lstsize(t_list *lst)
 {
 	t_list	*print;
 	int		size;
-	
+
 	print = lst;
 	size = 0;
 	while (print)

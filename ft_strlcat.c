@@ -6,9 +6,16 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:30:27 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/07 15:30:28 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:05:34 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strlcat.c
+ * @brief appends the NUL-terminated string src to the end
+ of dst. It will append at most size - strlen(dst) - 1 bytes,
+ NUL-terminating the result.
+ */
 
 #include "libft.h"
 

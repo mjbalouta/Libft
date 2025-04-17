@@ -6,9 +6,17 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:21:25 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:56:21 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:32:02 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_striteri.c
+ * @brief Applies the function ’f’ to each character of the
+string passed as argument, passing its index as
+the first argument. Each character is passed by
+address to ’f’ so it can be modified if necessary.
+ */
 
 #include "libft.h"
 

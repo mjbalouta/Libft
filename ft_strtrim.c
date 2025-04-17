@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:28:35 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 20:34:49 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/17 11:33:33 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @file ft_strtrim.c
  * @brief Allocates memory (using malloc(3)) and returns a
 copy of ’s1’ with characters from ’set’ removed
 from the beginning and the end.
- * 
  */
 
 #include "libft.h"
@@ -81,7 +81,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		size;
 	int		end;
 
-	if(!s1[0])
+	if (!s1[0])
 		return (ft_strdup(""));
 	if (!set[0])
 		return (ft_strdup(s1));
@@ -96,9 +96,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (i < size)
-	{
 		ptr[i++] = s1[start++];
-	}
 	ptr[i] = '\0';
 	return (ptr);
 }

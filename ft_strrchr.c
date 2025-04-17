@@ -6,9 +6,15 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:30:48 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 12:55:08 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:03:27 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strrchr.c
+ * @brief returns a pointer to the last occurrence of
+ the character c in the string s.
+ */
 
 #include "libft.h"
 
@@ -18,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	while (s[i])
-	 	i++;
+		i++;
 	while (i >= 0)
 	{
 		if (s[i] == (char )c)

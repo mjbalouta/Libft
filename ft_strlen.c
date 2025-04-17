@@ -6,9 +6,14 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:30:36 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/07 16:36:16 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:45:42 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strlen.c
+ * @brief 
+ */
 
 #include "libft.h"
 

@@ -6,9 +6,14 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:29:30 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/07 15:35:07 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:53:37 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_isalpha.c
+ * @brief checks for an alphabetic character
+ */
 
 #include "libft.h"
 

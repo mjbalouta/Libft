@@ -3,12 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:49:56 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 20:52:23 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/17 11:32:51 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_itoa.c
+ * @brief Allocates memory (using malloc(3)) and returns
+a string representing the integer received as an
+argument. Negative numbers must be handled.
+ */
 
 #include "libft.h"
 

@@ -3,12 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:23:34 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 20:00:50 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/17 11:29:51 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_putnbr_fd.c
+ * @brief Outputs the integer ’n’ to the specified file
+descriptor.
+ */
 
 #include "libft.h"
 

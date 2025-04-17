@@ -6,13 +6,19 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:09:35 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/15 16:06:06 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:26:50 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Deletes and frees the given node and all its
+successors, using the function ’del’ and free(3).
+Finally, set the pointer to the list to NULL.
+ */
+
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 

@@ -6,9 +6,16 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:30:43 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 15:25:52 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:07:48 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strnstr.c
+ * @brief locates the first occurrence of the null-terminated
+ string little in the string big, where not more than len
+ characters are searched.
+ */
 
 #include "libft.h"
 
@@ -28,8 +35,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			i++;
 			j++;
 		}
-		if(!little[j])
-			return((char *)&big[i - j]);
+		if (!little[j])
+			return ((char *)&big[i - j]);
 		i = i - j + 1;
 	}
 	return (0);

@@ -6,15 +6,15 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:04:44 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 11:26:16 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:33:56 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @file ft_strjoin.c
  * @brief Allocates memory (using malloc(3)) and returns a
 new string, which is the result of concatening ’s1’
 and ’s2’.
- * 
  */
 
 #include "libft.h"

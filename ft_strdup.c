@@ -6,9 +6,16 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:30:24 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/07 16:34:29 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:04:18 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strdup.c
+ * @brief returns a pointer to a new string which is a duplicate
+of the string s. Memory for the new string is obtained with malloc(3),
+and can be freed with free(3).
+ */
 
 #include "libft.h"
 

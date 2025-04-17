@@ -3,12 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:28:01 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/16 20:47:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/17 12:49:49 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_atoi.c
+ * @brief converts the initial
+ * portion of the string pointed to by nptr to int.
+ */
 
 #include "libft.h"
 

@@ -6,18 +6,17 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 14:43:53 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/14 14:56:24 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:10:47 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
+ * @file ft_split.c
  * @brief Allocates memory (using malloc(3)) and returns an
 array of strings obtained by splitting ’s’ using
 the character ’c’ as a delimiter. The array must
 end with a NULL pointer.
- * 
  */
-
 #include "libft.h"
 
 static char	**ft_free_array(char **s)
@@ -86,10 +85,7 @@ static char	**ft_fill_array(char **array, int nr_words, const char *s, char c)
 			count = ft_count_char(i, s, c);
 			array[j] = (char *)malloc(sizeof(char) * (count + 1));
 			if (!array[j])
-			{
-				ft_free_array(array);
-				return (NULL);
-			}
+				return (ft_free_array(array), NULL);
 			ft_strlcpy(array[j++], s + start, count + 1);
 		}
 		else
