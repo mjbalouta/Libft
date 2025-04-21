@@ -6,7 +6,7 @@
 /*   By: mjoao-fr <mjoao-fr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 14:43:53 by mjoao-fr          #+#    #+#             */
-/*   Updated: 2025/04/17 13:10:47 by mjoao-fr         ###   ########.fr       */
+/*   Updated: 2025/04/21 09:45:18 by mjoao-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static char	**ft_fill_array(char **array, int nr_words, const char *s, char c)
 			count = ft_count_char(i, s, c);
 			array[j] = (char *)malloc(sizeof(char) * (count + 1));
 			if (!array[j])
-				return (ft_free_array(array), NULL);
+				return (ft_free_array(array));
 			ft_strlcpy(array[j++], s + start, count + 1);
 		}
 		else
